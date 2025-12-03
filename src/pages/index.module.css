@@ -1,0 +1,102 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  padding: 8rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heroBanner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%),
+    radial-gradient(circle at 100% 100%, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+  animation: gradient 20s ease infinite;
+  pointer-events: none;
+}
+
+.heroDescription {
+  font-size: 1.25rem;
+  color: var(--ifm-color-emphasis-700);
+  max-width: 700px;
+  margin: 2rem auto 3rem;
+  line-height: 1.8;
+  animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1);
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
+  font-weight: 400;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  animation-delay: 0.4s;
+  animation-fill-mode: both;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 5rem 2rem;
+  }
+  
+  .heroDescription {
+    font-size: 1.125rem;
+    margin: 1.5rem auto 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+  
+  .buttons .button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
