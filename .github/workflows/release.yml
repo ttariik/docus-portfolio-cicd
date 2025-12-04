@@ -16,8 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     
     permissions:
-      contents: write
-      actions: read
+      contents: read
+      packages: write
     
     steps:
       - uses: actions/checkout@v4
@@ -66,4 +66,44 @@ jobs:
           name: release-build
           path: build/
           retention-days: 30
+      
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Extract metadata for Docker
+        id: meta
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/}
+          if [ -z "$VERSION" ]; then
+            VERSION=${GITHUB_REF#refs/heads/}
+            VERSION=${VERSION//\//-}
+          fi
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "tag=ghcr.io/${{ github.repository_owner }}/devsecops-blog:$VERSION" >> $GITHUB_OUTPUT
+          echo "tag_latest=ghcr.io/${{ github.repository_owner }}/devsecops-blog:latest" >> $GITHUB_OUTPUT
+      
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: |
+            ${{ steps.meta.outputs.tag }}
+            ${{ steps.meta.outputs.tag_latest }}
+          build-args: |
+            BLOG_ENABLED=true
+            DEPLOYMENT_URL=https://ttariik.github.io
+            BASE_URL=/
+            GITHUB_ORG=${{ github.repository_owner }}
+            GITHUB_PROJECT=${{ github.event.repository.name }}
+            DEPLOYMENT_BRANCH=main
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
