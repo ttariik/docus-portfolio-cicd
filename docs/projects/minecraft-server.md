@@ -7,10 +7,9 @@ import GithubLinkAdmonition from '@site/src/components/GithubLinkAdmonition';
 <GithubLinkAdmonition
 link="https://github.com/ttariik/Minecraft-server/tree/feature/initial-setup"
 title="View on GitHub"
-type="info"
-
-> Explore the complete source code, deployment scripts, and configuration files
-> </GithubLinkAdmonition>
+type="info">
+Explore the complete source code, deployment scripts, and configuration files
+</GithubLinkAdmonition>
 
 ## Overview
 

@@ -7,10 +7,9 @@ import GithubLinkAdmonition from '@site/src/components/GithubLinkAdmonition';
 <GithubLinkAdmonition
 link="https://github.com/ttariik/V-Server"
 title="View on GitHub"
-type="info"
-
-> Explore the complete infrastructure configuration and deployment scripts
-> </GithubLinkAdmonition>
+type="info">
+Explore the complete infrastructure configuration and deployment scripts
+</GithubLinkAdmonition>
 
 ## Overview
 

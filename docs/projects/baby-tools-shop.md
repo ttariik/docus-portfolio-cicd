@@ -7,10 +7,9 @@ import GithubLinkAdmonition from '@site/src/components/GithubLinkAdmonition';
 <GithubLinkAdmonition
 link="https://github.com/ttariik/Baby-Tools-Shop/tree/feature/production-enhancements"
 title="View on GitHub"
-type="info"
-
-> Explore the complete source code, database schemas, and deployment configurations
-> </GithubLinkAdmonition>
+type="info">
+Explore the complete source code, database schemas, and deployment configurations
+</GithubLinkAdmonition>
 
 ## Overview
 

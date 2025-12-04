@@ -7,10 +7,9 @@ import GithubLinkAdmonition from '@site/src/components/GithubLinkAdmonition';
 <GithubLinkAdmonition
 link="https://github.com/ttariik/Wordpress/tree/feature/wordpress"
 title="View on GitHub"
-type="info"
-
-> Explore the complete deployment configuration and setup scripts
-> </GithubLinkAdmonition>
+type="info">
+Explore the complete deployment configuration and setup scripts
+</GithubLinkAdmonition>
 
 ## Overview
 

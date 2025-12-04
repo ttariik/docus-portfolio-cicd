@@ -7,10 +7,9 @@ import GithubLinkAdmonition from '@site/src/components/GithubLinkAdmonition';
 <GithubLinkAdmonition
 link="https://github.com/ttariik/Conduit-Container/tree/conduit"
 title="View on GitHub"
-type="info"
-
-> Explore the complete source code, Docker configurations, and deployment workflows
-> </GithubLinkAdmonition>
+type="info">
+Explore the complete source code, Docker configurations, and deployment workflows
+</GithubLinkAdmonition>
 
 ## Overview
 

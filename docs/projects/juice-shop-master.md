@@ -7,10 +7,9 @@ import GithubLinkAdmonition from '@site/src/components/GithubLinkAdmonition';
 <GithubLinkAdmonition
 link="https://github.com/ttariik/Juice-Shop-Master"
 title="View on GitHub"
-type="warning"
-
-> This is a security testing environment. Use responsibly and only in controlled environments.
-> </GithubLinkAdmonition>
+type="warning">
+This is a security testing environment. Use responsibly and only in controlled environments.
+</GithubLinkAdmonition>
 
 ## Overview
 
