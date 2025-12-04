@@ -16,6 +16,7 @@ Das Projekt verwendet mehrere GitHub Actions Workflows für verschiedene Zwecke:
 ### 1. CI Pipeline (`ci.yml`)
 
 **Trigger:**
+
 - Push zu `main` oder `feature/**` Branches
 - Pull Requests zu `main` oder `feature/**` Branches
 - Manuell via `workflow_dispatch`
@@ -23,17 +24,20 @@ Das Projekt verwendet mehrere GitHub Actions Workflows für verschiedene Zwecke:
 **Jobs:**
 
 #### Lint and Type Check
+
 - Führt ESLint aus
 - Führt TypeScript Type-Checking aus
 - Prüft Code-Formatierung mit Prettier
 - Kommentiert PRs bei Fehlern
 
 #### Build
+
 - Installiert Dependencies
 - Erstellt Production Build
 - Lädt Build-Artefakte hoch (7 Tage Retention)
 
 #### Security Audit
+
 - Führt `pnpm audit` aus
 - Prüft auf moderate Sicherheitslücken
 - Läuft auch bei Fehlern weiter (`continue-on-error: true`)
@@ -41,6 +45,7 @@ Das Projekt verwendet mehrere GitHub Actions Workflows für verschiedene Zwecke:
 ### 2. Deploy Pipeline (`deploy.yml`)
 
 **Trigger:**
+
 - Push zu `main` Branch
 - Push zu `feature/devsecops-blog-setup` Branch
 - Manuell via `workflow_dispatch`
@@ -49,11 +54,13 @@ Das Projekt verwendet mehrere GitHub Actions Workflows für verschiedene Zwecke:
 **Jobs:**
 
 #### Build
+
 - Erstellt Docusaurus Build
 - Kopiert Build zu `github-pages` Verzeichnis
 - Lädt Build-Artefakt hoch
 
 #### Deploy
+
 - Deployed zu GitHub Pages
 - Läuft nur auf Default Branch
 - Benötigt `pages: write` Permission
@@ -61,12 +68,14 @@ Das Projekt verwendet mehrere GitHub Actions Workflows für verschiedene Zwecke:
 ### 3. Preview Pipeline (`preview.yml`)
 
 **Trigger:**
+
 - Pull Requests zu `main` oder `feature/**` Branches
 - Manuell via `workflow_dispatch`
 
 **Jobs:**
 
 #### Preview Build
+
 - Erstellt Preview-Build für PRs
 - Kommentiert PRs mit Build-Status
 - Lädt Build-Artefakte hoch (3 Tage Retention)
@@ -74,12 +83,14 @@ Das Projekt verwendet mehrere GitHub Actions Workflows für verschiedene Zwecke:
 ### 4. Release Pipeline (`release.yml`)
 
 **Trigger:**
+
 - GitHub Release veröffentlicht
 - Manuell via `workflow_dispatch` (mit Version Input)
 
 **Jobs:**
 
 #### Release Build
+
 - Erstellt Release-Build
 - Erstellt `release-build.tar.gz` Archiv
 - Lädt Release-Asset hoch
@@ -120,11 +131,13 @@ Die Workflows benötigen folgende Permissions:
 ### Standard Development Flow
 
 1. **Feature Branch erstellen:**
+
    ```bash
    git checkout -b feature/my-feature
    ```
 
 2. **Änderungen committen und pushen:**
+
    ```bash
    git add .
    git commit -m "feat: Add new feature"
@@ -146,17 +159,20 @@ Die Workflows benötigen folgende Permissions:
 ### Manuelle Trigger
 
 #### CI Pipeline manuell starten:
+
 ```bash
 # Via GitHub Actions UI oder:
 gh workflow run ci.yml
 ```
 
 #### Deploy Pipeline manuell starten:
+
 ```bash
 gh workflow run deploy.yml
 ```
 
 #### Release erstellen:
+
 ```bash
 gh release create v1.0.0 --title "Release v1.0.0" --notes "Release notes"
 ```
@@ -187,6 +203,7 @@ gh release create v1.0.0 --title "Release v1.0.0" --notes "Release notes"
 ## Best Practices
 
 1. **Immer lokal testen** bevor pushen:
+
    ```bash
    pnpm validate
    pnpm build
@@ -211,4 +228,3 @@ gh release create v1.0.0 --title "Release v1.0.0" --notes "Release notes"
 - [GitHub Actions Dokumentation](https://docs.github.com/en/actions)
 - [Docusaurus Deployment Guide](https://docusaurus.io/docs/deployment)
 - [GitHub Pages Dokumentation](https://docs.github.com/en/pages)
-
