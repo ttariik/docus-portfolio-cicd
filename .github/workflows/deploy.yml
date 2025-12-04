@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - main
+      - feature/devsecops-blog-setup
 
 jobs:
   build:
