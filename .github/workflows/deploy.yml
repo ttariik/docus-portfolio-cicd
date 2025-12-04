@@ -37,7 +37,7 @@ jobs:
         run: pnpm build && cp -r build github-pages
       
       - name: Upload Build Artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: github-pages
 
