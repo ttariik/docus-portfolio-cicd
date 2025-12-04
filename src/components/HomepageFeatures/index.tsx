@@ -1,11 +1,12 @@
 import { useEffect, useRef } from 'react';
+import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
 type FeatureItem = {
   title: string;
-  description: JSX.Element;
+  description: ReactNode;
   icon: string;
 };
 
@@ -90,7 +91,7 @@ function Feature({ title, icon, description, index }: FeatureItem & { index: num
   );
 }
 
-export default function HomepageFeatures(): JSX.Element {
+export default function HomepageFeatures(): ReactNode {
   return (
     <section className={styles.features}>
       <div className="container">
