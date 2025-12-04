@@ -1,4 +1,4 @@
-import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 /**
  * Sidebar configuration for documentation
@@ -26,10 +26,7 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'DevOps',
           collapsed: true,
-          items: [
-            'knowledge-base/DevOps/overview',
-            'knowledge-base/DevOps/implementing-devops',
-          ],
+          items: ['knowledge-base/DevOps/overview', 'knowledge-base/DevOps/implementing-devops'],
         },
         {
           type: 'category',

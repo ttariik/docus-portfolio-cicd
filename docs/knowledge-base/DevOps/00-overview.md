@@ -132,12 +132,13 @@ Define and manage infrastructure using code and version control:
 </Tabs>
 
 :::tip Benefits of IaC
+
 - **Version Control**: Track infrastructure changes
 - **Reproducibility**: Consistent environments
 - **Documentation**: Self-documenting infrastructure
 - **Testing**: Test infrastructure changes
 - **Collaboration**: Team-based infrastructure management
-:::
+  :::
 
 ## Continuous Integration (CI)
 
@@ -148,9 +149,9 @@ name: Continuous Integration
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [main, develop]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   test:
@@ -158,37 +159,38 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x, 18.x, 20.x]
-    
+
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      
+
       - name: Install dependencies
         run: npm ci
-      
+
       - name: Run linter
         run: npm run lint
-      
+
       - name: Run tests
         run: npm test
-      
+
       - name: Generate coverage
         run: npm run test:coverage
-      
+
       - name: Upload coverage
         uses: codecov/codecov-action@v3
 ```
 
 :::success CI Benefits
+
 - **Early Bug Detection**: Catch issues before they reach production
 - **Faster Feedback**: Know immediately if changes break something
 - **Quality Assurance**: Automated testing ensures code quality
 - **Confidence**: Deploy with confidence knowing tests pass
-:::
+  :::
 
 ## Continuous Deployment (CD)
 
@@ -200,16 +202,16 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
-    
+
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Build Docker image
         run: docker build -t myapp:${{ github.sha }} .
-      
+
       - name: Push to registry
         run: docker push myapp:${{ github.sha }}
-      
+
       - name: Deploy to production
         run: |
           kubectl set image deployment/myapp \
@@ -277,13 +279,13 @@ The DevOps lifecycle is a continuous loop:
 
 ### CI/CD Platforms
 
-| Tool | Type | Best For |
-|------|------|----------|
-| **Jenkins** | Self-hosted | Complex pipelines, flexibility |
-| **GitHub Actions** | Cloud | GitHub repositories |
-| **GitLab CI** | Integrated | GitLab projects |
-| **CircleCI** | Cloud | Fast builds, parallelism |
-| **Travis CI** | Cloud | Open source projects |
+| Tool               | Type        | Best For                       |
+| ------------------ | ----------- | ------------------------------ |
+| **Jenkins**        | Self-hosted | Complex pipelines, flexibility |
+| **GitHub Actions** | Cloud       | GitHub repositories            |
+| **GitLab CI**      | Integrated  | GitLab projects                |
+| **CircleCI**       | Cloud       | Fast builds, parallelism       |
+| **Travis CI**      | Cloud       | Open source projects           |
 
 ### Containerization
 
@@ -311,21 +313,25 @@ The DevOps lifecycle is a continuous loop:
 :::success Key Benefits
 
 ### Speed
+
 - Faster time to market
 - Rapid iteration cycles
 - Quick recovery from failures
 
 ### Reliability
+
 - Consistent deployments
 - Automated testing
 - Reduced human error
 
 ### Scalability
+
 - Infrastructure automation
 - Elastic resource management
 - Cloud-native architectures
 
 ### Security
+
 - Automated security testing
 - Compliance as code
 - Security scanning in CI/CD
@@ -398,8 +404,9 @@ Ready to implement DevOps? Continue to [Implementing DevOps](/docs/knowledge-bas
 ---
 
 :::info Additional Resources
+
 - [DevOps Institute](https://www.devopsinstitute.com/)
 - [AWS DevOps](https://aws.amazon.com/devops/)
 - [Google Cloud DevOps](https://cloud.google.com/devops)
 - [Microsoft Azure DevOps](https://azure.microsoft.com/en-us/services/devops/)
-:::
+  :::

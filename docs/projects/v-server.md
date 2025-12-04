@@ -4,13 +4,13 @@ A comprehensive virtual server management and deployment solution with automated
 
 import GithubLinkAdmonition from '@site/src/components/GithubLinkAdmonition';
 
-<GithubLinkAdmonition 
-    link="https://github.com/ttariik/V-Server"
-    title="View on GitHub" 
-    type="info"
->
-Explore the complete infrastructure configuration and deployment scripts
-</GithubLinkAdmonition>
+<GithubLinkAdmonition
+link="https://github.com/ttariik/V-Server"
+title="View on GitHub"
+type="info"
+
+> Explore the complete infrastructure configuration and deployment scripts
+> </GithubLinkAdmonition>
 
 ## Overview
 
@@ -143,4 +143,3 @@ The project demonstrates:
 - Server Administration Best Practices
 - Infrastructure as Code Documentation
 - DevOps Best Practices
-

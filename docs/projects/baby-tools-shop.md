@@ -4,13 +4,13 @@ A modern, production-ready e-commerce web application built with Python Flask, f
 
 import GithubLinkAdmonition from '@site/src/components/GithubLinkAdmonition';
 
-<GithubLinkAdmonition 
-    link="https://github.com/ttariik/Baby-Tools-Shop/tree/feature/production-enhancements"
-    title="View on GitHub" 
-    type="info"
->
-Explore the complete source code, database schemas, and deployment configurations
-</GithubLinkAdmonition>
+<GithubLinkAdmonition
+link="https://github.com/ttariik/Baby-Tools-Shop/tree/feature/production-enhancements"
+title="View on GitHub"
+type="info"
+
+> Explore the complete source code, database schemas, and deployment configurations
+> </GithubLinkAdmonition>
 
 ## Overview
 
@@ -106,6 +106,7 @@ docker-compose down
 ### Environment Configuration
 
 Configure via environment variables:
+
 - Database connection strings
 - Secret keys
 - Debug mode settings
@@ -136,4 +137,3 @@ The `feature/production-enhancements` branch includes:
 - Flask Documentation
 - Docker Documentation
 - E-commerce Best Practices
-

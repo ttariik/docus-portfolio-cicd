@@ -4,13 +4,13 @@ A comprehensive security testing and penetration testing environment based on OW
 
 import GithubLinkAdmonition from '@site/src/components/GithubLinkAdmonition';
 
-<GithubLinkAdmonition 
-    link="https://github.com/ttariik/Juice-Shop-Master"
-    title="View on GitHub" 
-    type="warning"
->
-This is a security testing environment. Use responsibly and only in controlled environments.
-</GithubLinkAdmonition>
+<GithubLinkAdmonition
+link="https://github.com/ttariik/Juice-Shop-Master"
+title="View on GitHub"
+type="warning"
+
+> This is a security testing environment. Use responsibly and only in controlled environments.
+> </GithubLinkAdmonition>
 
 ## Overview
 
@@ -90,7 +90,7 @@ docker-compose up -d
 
 ### Security Considerations
 
-⚠️ **Important**: This application is intentionally vulnerable. 
+⚠️ **Important**: This application is intentionally vulnerable.
 
 - **Never deploy to public networks**
 - **Use only in isolated environments**
@@ -151,4 +151,3 @@ This project is intended for:
 - [OWASP Juice Shop](https://owasp.org/www-project-juice-shop/)
 - OWASP Top 10 Documentation
 - Security Testing Best Practices
-

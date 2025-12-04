@@ -4,13 +4,13 @@ A secure, production-ready RESTful API for managing truck signage data, featurin
 
 import GithubLinkAdmonition from '@site/src/components/GithubLinkAdmonition';
 
-<GithubLinkAdmonition 
-    link="https://github.com/ttariik/truck_signs_api/tree/feature/security-and-docker-enhancements"
-    title="View on GitHub" 
-    type="info"
->
-Explore the complete API implementation, security features, and Docker configuration
-</GithubLinkAdmonition>
+<GithubLinkAdmonition
+link="https://github.com/ttariik/truck_signs_api/tree/feature/security-and-docker-enhancements"
+title="View on GitHub"
+type="info"
+
+> Explore the complete API implementation, security features, and Docker configuration
+> </GithubLinkAdmonition>
 
 ## Overview
 
@@ -227,4 +227,3 @@ GET /metrics         # Prometheus metrics
 - API Security Guidelines
 - Docker Best Practices
 - OpenAPI Specification
-

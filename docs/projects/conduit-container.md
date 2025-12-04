@@ -4,13 +4,13 @@ A production-ready, containerized full-stack application deployment solution fea
 
 import GithubLinkAdmonition from '@site/src/components/GithubLinkAdmonition';
 
-<GithubLinkAdmonition 
-    link="https://github.com/ttariik/Conduit-Container/tree/conduit"
-    title="View on GitHub" 
-    type="info"
->
-Explore the complete source code, Docker configurations, and deployment workflows
-</GithubLinkAdmonition>
+<GithubLinkAdmonition
+link="https://github.com/ttariik/Conduit-Container/tree/conduit"
+title="View on GitHub"
+type="info"
+
+> Explore the complete source code, Docker configurations, and deployment workflows
+> </GithubLinkAdmonition>
 
 ## Overview
 
@@ -77,6 +77,7 @@ Conduit-Container/
 ### Local Development Setup
 
 1. **Clone the repository**:
+
 ```bash
 git clone https://github.com/ttariik/Conduit-Container.git
 cd Conduit-Container
@@ -84,17 +85,20 @@ git checkout conduit
 ```
 
 2. **Configure environment variables**:
+
 ```bash
 cp env.example .env
 # Edit .env with your local configuration
 ```
 
 3. **Start services**:
+
 ```bash
 docker compose up -d --build
 ```
 
 4. **Verify deployment**:
+
 ```bash
 # Check backend API
 curl http://localhost:8000/api/tags/
@@ -124,6 +128,7 @@ The CI/CD pipeline automatically:
 4. **Verifies** service health and accessibility
 
 **Trigger deployment**:
+
 - Push to `conduit` or `main` branch (automatic)
 - Manual trigger via GitHub Actions UI
 
@@ -158,12 +163,14 @@ curl http://127.0.0.1:8282/
 All configuration is managed via environment variables following the `UPPER_CASE_WITH_UNDERSCORE` convention:
 
 **Frontend Configuration**:
+
 - `FRONTEND_PORT`: Frontend service port (default: 8282)
 - `API_URL`: Backend API endpoint URL
 - `FRONTEND_BUILD_CONFIGURATION`: Build mode (development/production)
 - `FRONTEND_PRODUCTION`: Production flag
 
 **Backend Configuration**:
+
 - `BACKEND_PORT`: Backend service port (default: 8000)
 - `BACKEND_PYTHON_VERSION`: Python version for backend
 - `DJANGO_ALLOWED_HOSTS`: Comma-separated list of allowed hostnames
@@ -174,6 +181,7 @@ All configuration is managed via environment variables following the `UPPER_CASE
 - `DJANGO_SUPERUSER_PASSWORD`: Admin password
 
 **Database Configuration**:
+
 - `POSTGRES_DB`: Database name
 - `POSTGRES_USER`: Database user
 - `POSTGRES_PASSWORD`: Database password
@@ -181,9 +189,11 @@ All configuration is managed via environment variables following the `UPPER_CASE
 - `DATABASE_URL`: Full database connection URL
 
 **CORS Configuration**:
+
 - `CORS_ALLOWED_ORIGINS`: Comma-separated list of allowed origins
 
 **Logging**:
+
 - `GUNICORN_LOG_LEVEL`: Gunicorn log level (info/debug/warning/error)
 - `GUNICORN_TIMEOUT`: Request timeout in seconds
 
@@ -245,10 +255,12 @@ After first deployment:
 ### Multi-Stage Builds
 
 **Backend Dockerfile**:
+
 - Stage 1: Python base image with dependencies installation
 - Stage 2: Runtime image with application code and Gunicorn
 
 **Frontend Dockerfile**:
+
 - Stage 1: Node.js build environment for Angular compilation
 - Stage 2: NGINX runtime image serving static files
 
@@ -366,4 +378,3 @@ Before submitting the project, confirm:
 - [Angular Documentation](https://angular.io/docs)
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
 - [GitHub Container Registry Documentation](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)
-

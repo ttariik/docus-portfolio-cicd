@@ -1,4 +1,4 @@
-import {useEffect, useRef} from 'react';
+import { useEffect, useRef } from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
@@ -15,8 +15,8 @@ const FeatureList: FeatureItem[] = [
     icon: '🚀',
     description: (
       <>
-        Explore my portfolio of development projects. From web applications to 
-        infrastructure solutions, discover the technologies and methodologies I use.
+        Explore my portfolio of development projects. From web applications to infrastructure
+        solutions, discover the technologies and methodologies I use.
       </>
     ),
   },
@@ -25,8 +25,8 @@ const FeatureList: FeatureItem[] = [
     icon: '📚',
     description: (
       <>
-        Comprehensive documentation covering various technologies, 
-        best practices, and development workflows I've learned and implemented.
+        Comprehensive documentation covering various technologies, best practices, and development
+        workflows I've learned and implemented.
       </>
     ),
   },
@@ -35,14 +35,14 @@ const FeatureList: FeatureItem[] = [
     icon: '💡',
     description: (
       <>
-        A curated collection of tutorials, tips, and insights covering DevOps, 
-        containerization, Git workflows, Linux administration, and more.
+        A curated collection of tutorials, tips, and insights covering DevOps, containerization, Git
+        workflows, Linux administration, and more.
       </>
     ),
   },
 ];
 
-function Feature({title, icon, description, index}: FeatureItem & {index: number}) {
+function Feature({ title, icon, description, index }: FeatureItem & { index: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -54,28 +54,35 @@ function Feature({title, icon, description, index}: FeatureItem & {index: number
           }
         });
       },
-      {threshold: 0.1}
+      { threshold: 0.1 }
     );
 
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
+    const currentCard = cardRef.current;
+    if (currentCard) {
+      observer.observe(currentCard);
     }
 
     return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
+      if (currentCard) {
+        observer.unobserve(currentCard);
       }
     };
   }, []);
 
   return (
     <div className={clsx('col col--4')}>
-      <div ref={cardRef} className={styles.featureCard} style={{animationDelay: `${index * 0.1}s`}}>
+      <div
+        ref={cardRef}
+        className={styles.featureCard}
+        style={{ animationDelay: `${index * 0.1}s` }}
+      >
         <div className={styles.featureIcon}>
           <span>{icon}</span>
         </div>
         <div className={styles.featureContent}>
-          <Heading as="h3" className={styles.featureTitle}>{title}</Heading>
+          <Heading as="h3" className={styles.featureTitle}>
+            {title}
+          </Heading>
           <p className={styles.featureDescription}>{description}</p>
         </div>
       </div>

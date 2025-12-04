@@ -4,22 +4,20 @@ title: Git Branching
 sidebar_label: Git Branching
 ---
 
-
 # Git Branching
 
 Branching is a powerful feature in Git that allows you to diverge from the main line of development and continue to work without affecting that main line. Here are some common commands to create and manage branches in Git.
 
-| Command                                   | Description                                            |
-|-------------------------------------------|--------------------------------------------------------|
-| `git branch <branch-name>`                | Create a new branch with the specified name            |
-| `git checkout -b <branch-name>`           | Create and switch to a new branch in one command       |
-| `git checkout <branch-name>`              | Switch to an existing branch                           |
-| `git branch`                              | List all branches in the repository                    |
-| `git branch -m <new-branch-name>`         | Rename the current branch to the specified name        |
-| `git branch -d <branch-name>`             | Delete a branch (if merged)                            |
-| `git branch -D <branch-name>`             | Force delete a branch (if not merged)                  |
-| `git merge <branch-name>`                 | Merge the specified branch into the current branch     |
-
+| Command                           | Description                                        |
+| --------------------------------- | -------------------------------------------------- |
+| `git branch <branch-name>`        | Create a new branch with the specified name        |
+| `git checkout -b <branch-name>`   | Create and switch to a new branch in one command   |
+| `git checkout <branch-name>`      | Switch to an existing branch                       |
+| `git branch`                      | List all branches in the repository                |
+| `git branch -m <new-branch-name>` | Rename the current branch to the specified name    |
+| `git branch -d <branch-name>`     | Delete a branch (if merged)                        |
+| `git branch -D <branch-name>`     | Force delete a branch (if not merged)              |
+| `git merge <branch-name>`         | Merge the specified branch into the current branch |
 
 ## Creating a New Branch
 
@@ -47,7 +45,6 @@ git checkout <branch-name>
 git switch <branch-name>
 ```
 
-
 ## Listing Branches
 
 To list all branches in your repository, use:
@@ -59,7 +56,7 @@ git branch
 git branch -r
 ```
 
-The currently active branch will be highlighted with an asterisk (*).
+The currently active branch will be highlighted with an asterisk (\*).
 
 ## Renaming a Branch
 
@@ -102,9 +99,6 @@ git merge <branch-name>
 
 This command merges the specified branch into the current branch.
 
-
-
 ## Summary
 
 Branching in Git allows for flexible and powerful workflows. By using the commands above, you can create, manage, and merge branches to streamline your development process.
-

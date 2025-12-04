@@ -71,11 +71,12 @@ Explore real-world implementations and project documentation:
 
 :::info Project Highlights
 Each project includes:
+
 - Complete source code and documentation
 - Deployment guides and configurations
 - Security best practices
 - Production-ready implementations
-:::
+  :::
 
 ## Getting Started
 
@@ -103,12 +104,13 @@ Each project includes:
 ## Documentation Features
 
 :::success What Makes This Documentation Special
+
 - **Practical Examples**: Real-world code and configurations
 - **Best Practices**: Industry-proven patterns and techniques
 - **Troubleshooting Guides**: Solutions to common problems
 - **Progressive Learning**: From basics to advanced topics
 - **Production Ready**: Enterprise-grade implementations
-:::
+  :::
 
 ## Quick Navigation
 

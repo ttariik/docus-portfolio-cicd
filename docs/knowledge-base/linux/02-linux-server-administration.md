@@ -139,6 +139,7 @@ WantedBy=multi-user.target
 ```
 
 Reload and enable:
+
 ```bash
 sudo systemctl daemon-reload
 sudo systemctl enable myapp
@@ -195,6 +196,7 @@ MaxAuthTries 3
 ```
 
 Restart SSH:
+
 ```bash
 sudo systemctl restart sshd
 ```
@@ -246,6 +248,7 @@ find $BACKUP_DIR -name "backup-*.tar.gz" -mtime +7 -delete
 ```
 
 Make executable:
+
 ```bash
 chmod +x /etc/cron.daily/backup.sh
 ```
@@ -270,6 +273,7 @@ network:
 ```
 
 Apply:
+
 ```bash
 sudo netplan apply
 ```
@@ -288,6 +292,7 @@ fs.file-max = 2097152
 ```
 
 Apply:
+
 ```bash
 sudo sysctl -p
 ```

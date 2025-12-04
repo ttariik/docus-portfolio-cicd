@@ -10,11 +10,12 @@ import TabItem from '@theme/TabItem';
 Containers have revolutionized software deployment by providing a consistent, portable, and efficient way to package and run applications. This guide provides a comprehensive introduction to containerization concepts and Docker.
 
 :::info What You'll Learn
+
 - Understanding containers and their benefits
 - Docker architecture and components
 - Container vs Virtual Machine comparison
 - Real-world use cases and best practices
-:::
+  :::
 
 ## What is Containerization?
 
@@ -35,11 +36,12 @@ Containerization is a lightweight virtualization technology that packages an app
 Docker has become synonymous with containerization, much like how "Kleenex" is used for tissues. While other container technologies exist (Podman, containerd, LXC), Docker remains the most widely adopted platform.
 
 :::tip Docker vs Other Technologies
+
 - **Docker**: Most popular, extensive ecosystem, easy to learn
 - **Podman**: Rootless containers, Docker-compatible
 - **containerd**: Lower-level runtime, used by Kubernetes
 - **LXC**: Linux containers, more system-level
-:::
+  :::
 
 ## Why Use Containers?
 
@@ -95,22 +97,23 @@ Docker has become synonymous with containerization, much like how "Kleenex" is u
 
 Understanding the difference helps you choose the right technology:
 
-| Aspect | Containers | Virtual Machines |
-|--------|-----------|------------------|
-| **Isolation** | Process-level | OS-level |
-| **Startup Time** | Seconds | Minutes |
-| **Resource Usage** | Low (MBs) | High (GBs) |
-| **Guest OS** | Shares host OS | Full OS per VM |
-| **Portability** | High | Medium |
-| **Use Case** | Applications | Full systems |
+| Aspect             | Containers     | Virtual Machines |
+| ------------------ | -------------- | ---------------- |
+| **Isolation**      | Process-level  | OS-level         |
+| **Startup Time**   | Seconds        | Minutes          |
+| **Resource Usage** | Low (MBs)      | High (GBs)       |
+| **Guest OS**       | Shares host OS | Full OS per VM   |
+| **Portability**    | High           | Medium           |
+| **Use Case**       | Applications   | Full systems     |
 
 :::warning When to Use VMs
 Virtual machines are still preferred for:
+
 - Running different operating systems
 - Complete system isolation requirements
 - Legacy applications requiring specific OS versions
 - Security-critical workloads needing full isolation
-:::
+  :::
 
 ## Docker Architecture
 
@@ -163,6 +166,7 @@ CMD ["npm", "start"]
 ```
 
 **Benefits:**
+
 - Consistent development environment
 - Easy onboarding for new developers
 - No "works on my machine" issues
@@ -191,6 +195,7 @@ jobs:
 ```
 
 **Benefits:**
+
 - Consistent build environment
 - Parallel test execution
 - Easy artifact management
@@ -206,6 +211,7 @@ kubectl apply -f deployment.yaml
 ```
 
 **Benefits:**
+
 - Zero-downtime deployments
 - Easy rollbacks
 - Horizontal scaling
@@ -239,6 +245,7 @@ CMD ["node", "dist/index.js"]
 ```
 
 **Benefits:**
+
 - Smaller final image
 - No build tools in production
 - Better security (fewer packages)
@@ -277,6 +284,7 @@ coverage
 ```
 
 **Benefits:**
+
 - Faster builds
 - Smaller build context
 - Exclude sensitive files
@@ -284,12 +292,13 @@ coverage
 ## Security Considerations
 
 :::warning Security Best Practices
+
 - Use official base images
 - Scan images for vulnerabilities
 - Run containers as non-root user
 - Keep images updated
 - Use minimal base images (Alpine Linux)
-:::
+  :::
 
 ### Example: Non-Root User
 
@@ -318,7 +327,8 @@ Ready to create your first container? Continue to [Create Your First Container I
 ---
 
 :::info Additional Resources
+
 - [Docker Official Documentation](https://docs.docker.com/)
 - [Docker Hub](https://hub.docker.com/) - Public image registry
 - [Best Practices Guide](https://docs.docker.com/develop/dev-best-practices/)
-:::
+  :::

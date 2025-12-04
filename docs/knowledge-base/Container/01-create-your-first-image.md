@@ -10,11 +10,12 @@ import TabItem from '@theme/TabItem';
 This comprehensive guide walks you through creating your first Docker container image from scratch, with best practices and real-world examples.
 
 :::info Prerequisites
+
 - Docker installed on your system
 - Basic understanding of command line
 - A text editor
 - Basic knowledge of your application's dependencies
-:::
+  :::
 
 ## Step 1: Create a Dockerfile
 
@@ -103,11 +104,12 @@ FROM python:3.11-slim
 ```
 
 :::tip Choosing Base Images
+
 - **Official images**: Use official images from Docker Hub
 - **Alpine Linux**: Smaller images (alpine variants)
 - **Distroless**: Minimal images for production
 - **Specific versions**: Pin versions for reproducibility
-:::
+  :::
 
 ### WORKDIR
 
@@ -118,6 +120,7 @@ WORKDIR /app
 ```
 
 **Benefits:**
+
 - Creates directory if it doesn't exist
 - Sets working directory for all subsequent commands
 - More readable than using `cd` commands
@@ -138,9 +141,10 @@ COPY --chown=user:group file.txt .
 ```
 
 :::warning COPY vs ADD
+
 - **COPY**: Preferred for most use cases (simpler, more predictable)
 - **ADD**: Has additional features (URLs, tar extraction) but less clear
-:::
+  :::
 
 ### RUN
 
@@ -165,6 +169,7 @@ RUN apt-get update \
 
 :::tip Layer Optimization
 Combine RUN commands to reduce image layers and size:
+
 ```dockerfile
 # Bad: Multiple layers
 RUN apt-get update
@@ -176,6 +181,7 @@ RUN apt-get update && \
     apt-get install -y python3 && \
     rm -rf /var/lib/apt/lists/*
 ```
+
 :::
 
 ### EXPOSE
@@ -254,6 +260,7 @@ docker build --no-cache -t my-app:latest .
 ```
 
 **Command breakdown:**
+
 - `docker build`: Command to build an image
 - `-t my-app:latest`: Tag the image with name `my-app` and tag `latest`
 - `.`: Build context (current directory)
@@ -281,6 +288,7 @@ docker history my-app:latest
 ```
 
 You should see your `my-app:latest` image in the list with details like:
+
 - Repository name
 - Tag
 - Image ID
@@ -362,6 +370,7 @@ Thumbs.db
 ```
 
 **Benefits:**
+
 - Faster builds
 - Smaller build context
 - Exclude sensitive files
@@ -413,6 +422,7 @@ For production, use multi-stage builds to reduce image size:
 </Tabs>
 
 **Benefits:**
+
 - Smaller final image
 - No build tools in production
 - Better security (fewer packages)
@@ -494,6 +504,7 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
 **Problem**: Files don't exist in build context.
 
 **Solutions**:
+
 - Ensure files exist in the build context
 - Check `.dockerignore` isn't excluding needed files
 - Verify file paths are correct
@@ -503,6 +514,7 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
 **Problem**: Application doesn't stay running.
 
 **Solutions**:
+
 - Ensure CMD or ENTRYPOINT is set correctly
 - Application must run in foreground (not as daemon)
 - Check application logs: `docker logs container-name`
@@ -512,6 +524,7 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
 **Problem**: Port mapping or network configuration issue.
 
 **Solutions**:
+
 - Verify EXPOSE directive matches application port
 - Check port mapping: `-p host-port:container-port`
 - Ensure application binds to `0.0.0.0`, not `localhost`
@@ -521,6 +534,7 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
 **Problem**: Image contains unnecessary files.
 
 **Solutions**:
+
 - Use multi-stage builds
 - Use `.dockerignore`
 - Use minimal base images (Alpine)
@@ -541,6 +555,7 @@ ENV APP_VERSION=${VERSION}
 ```
 
 Build with:
+
 ```bash
 docker build --build-arg NODE_ENV=development -t my-app:dev .
 ```
@@ -576,7 +591,8 @@ Congratulations! You've created your first container image. Here's what to explo
 ---
 
 :::info Additional Resources
+
 - [Dockerfile Best Practices](https://docs.docker.com/develop/dev-best-practices/)
 - [Docker Official Documentation](https://docs.docker.com/)
 - [Container Security Guide](https://docs.docker.com/engine/security/)
-:::
+  :::

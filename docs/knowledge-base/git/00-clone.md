@@ -90,11 +90,12 @@ git clone --depth 10 https://github.com/username/repository.git
 ```
 
 :::tip When to Use Shallow Clone
+
 - Large repositories with extensive history
 - CI/CD pipelines (faster builds)
 - When you don't need full history
 - Limited disk space
-:::
+  :::
 
 ### Clone Specific Branch
 
@@ -217,10 +218,11 @@ git remote add upstream https://github.com/original/repository.git
 
 :::tip Multiple Remotes
 You can have multiple remotes:
+
 - `origin`: Your fork or main repository
 - `upstream`: Original repository (for forks)
 - `production`: Production deployment target
-:::
+  :::
 
 ## Authentication
 
@@ -303,6 +305,7 @@ You can have multiple remotes:
 **Problem**: `fatal: repository '...' not found`
 
 **Solutions**:
+
 - Verify the repository URL is correct
 - Check your access permissions
 - Ensure you're authenticated
@@ -313,6 +316,7 @@ You can have multiple remotes:
 **Problem**: Clone takes forever or times out.
 
 **Solutions**:
+
 ```bash
 # Use shallow clone
 git clone --depth 1 https://github.com/username/repo.git
@@ -329,6 +333,7 @@ git config --global http.postBuffer 524288000
 **Problem**: Repository is too large for available disk space.
 
 **Solutions**:
+
 ```bash
 # Shallow clone (minimal history)
 git clone --depth 1 https://github.com/username/repo.git
@@ -402,7 +407,8 @@ After cloning, you might want to:
 ---
 
 :::info Additional Resources
+
 - [Git Official Documentation](https://git-scm.com/doc)
 - [GitHub Cloning Guide](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 - [GitLab Cloning Guide](https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html)
-:::
+  :::

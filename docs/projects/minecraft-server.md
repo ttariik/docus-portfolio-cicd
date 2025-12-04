@@ -4,13 +4,13 @@ A production-ready, self-hosted Minecraft server solution with automated deploym
 
 import GithubLinkAdmonition from '@site/src/components/GithubLinkAdmonition';
 
-<GithubLinkAdmonition 
-    link="https://github.com/ttariik/Minecraft-server/tree/feature/initial-setup"
-    title="View on GitHub" 
-    type="info"
->
-Explore the complete source code, deployment scripts, and configuration files
-</GithubLinkAdmonition>
+<GithubLinkAdmonition
+link="https://github.com/ttariik/Minecraft-server/tree/feature/initial-setup"
+title="View on GitHub"
+type="info"
+
+> Explore the complete source code, deployment scripts, and configuration files
+> </GithubLinkAdmonition>
 
 ## Overview
 
@@ -102,6 +102,7 @@ Customize game settings via `server.properties`:
 ### Web Dashboard
 
 Access real-time server metrics:
+
 - Server status and uptime
 - Active player count
 - CPU and memory usage
@@ -139,4 +140,3 @@ Daily backups run at 03:00 UTC via cron:
 - [GitHub Repository](https://github.com/ttariik/Minecraft-server/tree/feature/initial-setup)
 - Docker Documentation
 - Minecraft Server Documentation
-

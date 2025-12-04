@@ -13,21 +13,25 @@ Linux is not a complete operating system by itself, but rather a kernel that ser
 ## Key Characteristics
 
 ### Open Source
+
 - Source code is freely available
 - Can be modified and distributed
 - Community-driven development
 
 ### Multi-user and Multi-tasking
+
 - Multiple users can work simultaneously
 - Supports concurrent processes
 - Robust permission system
 
 ### Stability and Reliability
+
 - Known for uptime and stability
 - Widely used in server environments
 - Minimal system crashes
 
 ### Security
+
 - User-based permissions
 - Regular security updates
 - Strong firewall capabilities
@@ -37,18 +41,21 @@ Linux is not a complete operating system by itself, but rather a kernel that ser
 Popular Linux distributions include:
 
 ### Enterprise/Server
+
 - **Ubuntu Server**: User-friendly, widely supported
 - **CentOS/Rocky Linux**: Enterprise-focused, stable
 - **Debian**: Stable, community-driven
 - **Red Hat Enterprise Linux**: Commercial, enterprise support
 
 ### Desktop
+
 - **Ubuntu**: Most popular desktop distribution
 - **Fedora**: Cutting-edge features
 - **Linux Mint**: Windows-like interface
 - **Arch Linux**: Minimal, customizable
 
 ### Specialized
+
 - **Kali Linux**: Security and penetration testing
 - **Raspberry Pi OS**: For Raspberry Pi devices
 - **Alpine Linux**: Minimal, container-focused
@@ -77,21 +84,25 @@ Linux uses a hierarchical file system structure:
 ## Common Use Cases
 
 ### Web Servers
+
 - Apache, Nginx
 - PHP, Python, Node.js applications
 - Database servers (MySQL, PostgreSQL)
 
 ### Development
+
 - Software development environments
 - Container hosts (Docker, Kubernetes)
 - CI/CD pipelines
 
 ### Cloud Infrastructure
+
 - AWS, Azure, GCP instances
 - Container orchestration
 - Microservices deployment
 
 ### Embedded Systems
+
 - IoT devices
 - Routers and network equipment
 - Smart devices

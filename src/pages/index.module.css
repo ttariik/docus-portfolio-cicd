@@ -18,7 +18,7 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: 
+  background:
     radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%),
     radial-gradient(circle at 100% 100%, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
   animation: gradient 20s ease infinite;
@@ -52,7 +52,7 @@
   .heroBanner {
     padding: 5rem 2rem;
   }
-  
+
   .heroDescription {
     font-size: 1.125rem;
     margin: 1.5rem auto 2rem;
@@ -65,7 +65,7 @@
     width: 100%;
     gap: 1rem;
   }
-  
+
   .buttons .button {
     width: 100%;
     max-width: 300px;

@@ -6,6 +6,8 @@ A modern, feature-rich developer blog built with [Docusaurus](https://docusaurus
 ![Node.js](https://img.shields.io/badge/Node.js-≥18.0-green)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.5.2-blue)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
+![Code Style](https://img.shields.io/badge/Code%20Style-ESLint%20%2B%20Prettier-blueviolet)
+![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-success)
 
 ## ✨ Features
 
@@ -29,17 +31,20 @@ A modern, feature-rich developer blog built with [Docusaurus](https://docusaurus
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/ttariik/dev-blog-template-main.git
    cd dev-blog-template-main
    ```
 
 2. Install dependencies:
+
    ```bash
    pnpm install
    ```
 
 3. Start the development server:
+
    ```bash
    pnpm start
    ```
@@ -114,17 +119,20 @@ GIT_USER=ttariik pnpm deploy
 ### Cloud VM / NGINX
 
 1. Build the project:
+
    ```bash
    pnpm build
    ```
 
 2. Copy files to server:
+
    ```bash
    tar -czf blog-build.tar.gz -C build .
    scp blog-build.tar.gz user@your-server:/tmp/
    ```
 
 3. On the server:
+
    ```bash
    sudo mkdir -p /var/www/html
    sudo tar -xzf /tmp/blog-build.tar.gz -C /var/www/html
@@ -151,12 +159,14 @@ docker run -d -p 80:80 --name dev-blog dev-blog
 ## 📚 Documentation Sections
 
 ### Knowledge Base
+
 - **Container**: Docker fundamentals and containerization
 - **DevOps**: CI/CD, Infrastructure as Code, automation
 - **Git**: Version control workflows and best practices
 - **Linux**: Server administration and command line
 
 ### Projects
+
 - Minecraft Server
 - Baby Tools Shop
 - WordPress Setup
@@ -164,15 +174,57 @@ docker run -d -p 80:80 --name dev-blog dev-blog
 - V-Server
 - Truck Signs API
 
+## 🧪 Development
+
+### Code Quality
+
+The project uses ESLint and Prettier for code quality:
+
+```bash
+# Run linting
+pnpm lint
+
+# Fix linting issues
+pnpm lint:fix
+
+# Format code
+pnpm format
+
+# Check formatting
+pnpm format:check
+
+# Run all validations
+pnpm validate
+```
+
+### Type Checking
+
+```bash
+pnpm typecheck
+```
+
 ## 🤝 Contributing
 
-Contributions are welcome! Please follow these steps:
+Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTING.md) for details on:
+
+- Code of conduct
+- Development workflow
+- Code style guidelines
+- Commit message format
+- Pull request process
+
+Quick start:
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+3. Make your changes and run `pnpm validate`
+4. Commit your changes (`git commit -m 'feat: Add amazing feature'`)
+5. Push to the branch (`git push origin feature/amazing-feature`)
+6. Open a Pull Request
+
+## 🔒 Security
+
+For security concerns, please review our [Security Policy](SECURITY.md). To report a vulnerability, please follow the guidelines outlined in the security policy.
 
 ## 📝 License
 

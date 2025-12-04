@@ -21,6 +21,7 @@ command [options] [arguments]
 ```
 
 Example:
+
 ```bash
 ls -la /home/user
 ```

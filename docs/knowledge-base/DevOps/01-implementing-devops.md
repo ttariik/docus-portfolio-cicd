@@ -44,6 +44,7 @@ git commit -m "Initial commit"
 ```
 
 **Benefits:**
+
 - Complete history of changes
 - Easy rollback capabilities
 - Collaboration support
@@ -57,7 +58,7 @@ Set up automated builds for your applications:
 name: Build
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -77,9 +78,9 @@ Create a complete CI/CD pipeline:
 name: CI/CD Pipeline
 on:
   push:
-    branches: [ main, develop ]
+    branches: [main, develop]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   test:
@@ -136,7 +137,7 @@ provider "aws" {
 resource "aws_instance" "web" {
   ami           = "ami-0c55b159cbfafe1f0"
   instance_type = "t2.micro"
-  
+
   tags = {
     Name = "WebServer"
     Environment = "Production"
@@ -155,7 +156,7 @@ services:
   web:
     build: .
     ports:
-      - "8000:8000"
+      - '8000:8000'
     environment:
       - DATABASE_URL=postgresql://db:5432/mydb
     depends_on:
@@ -195,10 +196,10 @@ services:
   app:
     image: myapp:latest
     logging:
-      driver: "json-file"
+      driver: 'json-file'
       options:
-        max-size: "10m"
-        max-file: "3"
+        max-size: '10m'
+        max-file: '3'
 ```
 
 ## Security Best Practices

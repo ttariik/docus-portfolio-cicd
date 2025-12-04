@@ -4,13 +4,13 @@ A production-ready WordPress deployment solution with Docker containerization, a
 
 import GithubLinkAdmonition from '@site/src/components/GithubLinkAdmonition';
 
-<GithubLinkAdmonition 
-    link="https://github.com/ttariik/Wordpress/tree/feature/wordpress"
-    title="View on GitHub" 
-    type="info"
->
-Explore the complete deployment configuration and setup scripts
-</GithubLinkAdmonition>
+<GithubLinkAdmonition
+link="https://github.com/ttariik/Wordpress/tree/feature/wordpress"
+title="View on GitHub"
+type="info"
+
+> Explore the complete deployment configuration and setup scripts
+> </GithubLinkAdmonition>
 
 ## Overview
 
@@ -143,4 +143,3 @@ Configure via `.env` file:
 - WordPress Documentation
 - Docker Documentation
 - WordPress Security Best Practices
-
