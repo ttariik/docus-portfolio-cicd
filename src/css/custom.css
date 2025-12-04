@@ -27,7 +27,7 @@
 
   /* Custom animation variables */
   --animation-speed: 0.3s;
-  --animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-easing: cubic-bezier(0.4, 0, 0.2, 2);
 }
 
 [data-theme='dark'] {
