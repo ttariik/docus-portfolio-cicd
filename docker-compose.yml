@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  devsecops-blog:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BLOG_ENABLED: "true"
+        DEPLOYMENT_URL: "http://localhost:8080"
+        BASE_URL: "/"
+        GITHUB_ORG: "ttariik"
+        GITHUB_PROJECT: "DevSecOps-Blog"
+        DEPLOYMENT_BRANCH: "main"
+    image: devsecops-blog:local
+    container_name: devsecops-blog
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+
