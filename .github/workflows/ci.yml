@@ -4,7 +4,7 @@ on:
   push:
     branches: [main, feature/**]
   pull_request:
-    branches: [main]
+    branches: [main, feature/**]
   workflow_dispatch:
 
 jobs:
@@ -54,7 +54,7 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '❌ **Code validation failed!**\n\nPlease check the linting or type-check errors.'
+              body: '❌ **Code-Validierung fehlgeschlagen!**\n\nBitte überprüfe die Linting- oder Type-Check-Fehler.'
             })
 
   build:

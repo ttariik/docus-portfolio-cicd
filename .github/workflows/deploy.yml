@@ -6,15 +6,7 @@ on:
   push:
     branches:
       - main
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+      - feature/devsecops-blog-setup
 
 jobs:
   build:
@@ -33,30 +25,31 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: 'pnpm'
       
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       
       - name: Create .env config file
-        run: |
-          echo "DEPLOYMENT_URL=https://ttariik.github.io" >> .env
-          echo "DEPLOYMENT_BRANCH=main" >> .env
-          echo "BASE_URL=/docus-portfolio-cicd/" >> .env
-          echo "GITHUB_ORG=ttariik" >> .env
-          echo "GITHUB_PROJECT=docus-portfolio-cicd" >> .env
+        run: cp example.env .env
       
       - name: Build website
-        run: pnpm build
+        run: pnpm build && cp -r build github-pages
       
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: build
+          path: github-pages
 
   deploy:
     name: Deploy to GitHub Pages
     needs: build
+    if: github.ref_name == github.event.repository.default_branch
+    
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
