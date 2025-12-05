@@ -63,7 +63,7 @@ const projects: Project[] = [
 
 export default function ProjectsSection(): ReactNode {
   const [selectedProject, setSelectedProject] = useState<Project>(projects[0]);
-  const baseUrl = useBaseUrl('/');
+  const selectedProjectThumbnail = useBaseUrl(selectedProject.thumbnail);
 
   return (
     <section id="projects" className={styles.projectsSection}>
@@ -87,7 +87,7 @@ export default function ProjectsSection(): ReactNode {
           <div className={styles.featuredProject}>
             <div className={styles.projectImage}>
               <img
-                src={baseUrl + selectedProject.thumbnail.replace(/^\//, '')}
+                src={selectedProjectThumbnail}
                 alt={selectedProject.name}
                 className={styles.projectThumbnail}
               />

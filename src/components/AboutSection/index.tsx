@@ -5,8 +5,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
 export default function AboutSection(): ReactNode {
-  const baseUrl = useBaseUrl('/');
-  
   return (
     <section id="about" className={styles.aboutSection}>
       <div className="container">
@@ -35,7 +33,7 @@ export default function AboutSection(): ReactNode {
             </Link>
           </div>
           <div className={styles.profileImage}>
-            <img src={baseUrl + 'img/docusaurus.png'} alt="Tarik Sabanovic" className={styles.image} />
+            <img src={useBaseUrl('/img/docusaurus.png')} alt="Tarik Sabanovic" className={styles.image} />
           </div>
         </div>
       </div>

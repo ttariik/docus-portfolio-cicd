@@ -66,14 +66,17 @@ const skills: Skill[] = [
 ];
 
 export default function SkillsSection(): ReactNode {
-  const baseUrl = useBaseUrl('/');
-  
+  const skillsWithUrls = skills.map((skill) => ({
+    ...skill,
+    iconUrl: useBaseUrl(skill.iconPath),
+  }));
+
   return (
     <section id="skills" className={styles.skillsSection}>
       <div className="container">
         <h2 className={styles.title}>My skills.</h2>
         <div className={styles.skillsGrid}>
-          {skills.map((skill, index) => (
+          {skillsWithUrls.map((skill, index) => (
             <div
               key={index}
               className={styles.skillCardWrapper}
@@ -81,7 +84,7 @@ export default function SkillsSection(): ReactNode {
             >
               <div className={styles.skillCard}>
                 <div className={styles.skillIcon}>
-                  <img src={baseUrl + skill.iconPath.replace(/^\//, '')} alt={skill.name} className={styles.skillIconImage} />
+                  <img src={skill.iconUrl} alt={skill.name} className={styles.skillIconImage} />
                 </div>
                 <div className={styles.skillName}>{skill.name}</div>
               </div>
