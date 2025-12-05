@@ -18,6 +18,10 @@ If you see "There isn't a GitHub Pages site here" even though workflows are runn
 1. Go to **Settings** → **Environments**
 2. Verify that `github-pages` environment exists
 3. If it doesn't exist, it will be created automatically on first workflow run
+4. **Important**: If you want to deploy from feature branches, you need to configure deployment branches:
+   - Click on `github-pages` environment
+   - Under "Deployment branches", select "All branches" or add specific branches
+   - By default, only the default branch (`main`) is allowed
 
 ### Step 3: Verify Workflow Permissions
 
@@ -83,6 +87,19 @@ Set during build:
 2. Check that `github-pages` environment exists
 3. Verify workflow completed successfully in **Actions** tab
 4. Wait 2-3 minutes for deployment to propagate
+
+### Deployment rejected due to environment protection rules
+
+If you see "Branch is not allowed to deploy to github-pages due to environment protection rules":
+
+1. Go to **Settings** → **Environments** → **github-pages**
+2. Under "Deployment branches", configure which branches can deploy:
+   - Select "All branches" to allow any branch
+   - Or add specific branches (e.g., `feature/development`)
+3. **Note**: The workflow is configured to only deploy from `main` branch by default for security
+4. To deploy from feature branches, either:
+   - Merge to `main` branch (recommended for production)
+   - Or configure the environment to allow your feature branch
 
 ### Build fails
 
