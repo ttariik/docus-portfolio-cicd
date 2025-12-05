@@ -49,6 +49,18 @@ jobs:
       - name: Build website
         run: pnpm build
       
+      - name: Verify build output
+        run: |
+          if [ ! -d "build" ]; then
+            echo "Error: build directory not found"
+            exit 1
+          fi
+          if [ ! -f "build/index.html" ]; then
+            echo "Error: build/index.html not found"
+            exit 1
+          fi
+          echo "Build verification successful"
+      
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v4
         with:
@@ -60,7 +72,9 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    
+    permissions:
+      pages: write
+      id-token: write
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
