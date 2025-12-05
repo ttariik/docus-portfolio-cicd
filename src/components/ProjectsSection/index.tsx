@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from 'react';
 import Link from '@docusaurus/Link';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
 type Project = {
@@ -62,6 +63,7 @@ const projects: Project[] = [
 
 export default function ProjectsSection(): ReactNode {
   const [selectedProject, setSelectedProject] = useState<Project>(projects[0]);
+  const baseUrl = useBaseUrl('/');
 
   return (
     <section id="projects" className={styles.projectsSection}>
@@ -85,7 +87,7 @@ export default function ProjectsSection(): ReactNode {
           <div className={styles.featuredProject}>
             <div className={styles.projectImage}>
               <img
-                src={selectedProject.thumbnail}
+                src={baseUrl + selectedProject.thumbnail.replace(/^\//, '')}
                 alt={selectedProject.name}
                 className={styles.projectThumbnail}
               />
