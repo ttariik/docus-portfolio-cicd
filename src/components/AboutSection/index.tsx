@@ -33,7 +33,11 @@ export default function AboutSection(): ReactNode {
             </Link>
           </div>
           <div className={styles.profileImage}>
-            <img src={useBaseUrl('/img/docusaurus.png')} alt="Tarik Sabanovic" className={styles.image} />
+            <img
+              src={useBaseUrl('/img/docusaurus.png')}
+              alt="Tarik Sabanovic"
+              className={styles.image}
+            />
           </div>
         </div>
       </div>
