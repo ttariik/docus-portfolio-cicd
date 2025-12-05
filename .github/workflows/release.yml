@@ -86,8 +86,8 @@ jobs:
             VERSION=${VERSION//\//-}
           fi
           echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "tag=ghcr.io/${{ github.repository_owner }}/devsecops-blog:$VERSION" >> $GITHUB_OUTPUT
-          echo "tag_latest=ghcr.io/${{ github.repository_owner }}/devsecops-blog:latest" >> $GITHUB_OUTPUT
+          echo "tag=ghcr.io/${{ github.repository_owner }}/docus-portfolio-cicd:$VERSION" >> $GITHUB_OUTPUT
+          echo "tag_latest=ghcr.io/${{ github.repository_owner }}/docus-portfolio-cicd:latest" >> $GITHUB_OUTPUT
       
       - name: Build and push Docker image
         uses: docker/build-push-action@v5

@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
 export default function AboutSection(): ReactNode {
@@ -32,7 +33,11 @@ export default function AboutSection(): ReactNode {
             </Link>
           </div>
           <div className={styles.profileImage}>
-            <img src="/img/docusaurus.png" alt="Tarik Sabanovic" className={styles.image} />
+            <img
+              src={useBaseUrl('/img/docusaurus.png')}
+              alt="Tarik Sabanovic"
+              className={styles.image}
+            />
           </div>
         </div>
       </div>

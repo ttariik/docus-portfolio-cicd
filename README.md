@@ -154,17 +154,25 @@ The site will be available at `http://localhost:8080`.
 #### Build Docker Image Locally
 
 ```bash
-docker build -t devsecops-blog:local \
-  --build-arg BLOG_ENABLED=true \
+docker build -t docus-portfolio-cicd:local \
+  --build-arg BLOG_ENABLED=false \
   --build-arg DEPLOYMENT_URL=http://localhost:8080 \
   --build-arg BASE_URL=/ \
   --build-arg GITHUB_ORG=ttariik \
-  --build-arg GITHUB_PROJECT=DevSecOps-Blog \
+  --build-arg GITHUB_PROJECT=docus-portfolio-cicd \
   --build-arg DEPLOYMENT_BRANCH=main \
   .
 
-docker run -d -p 8080:80 --name devsecops-blog devsecops-blog:local
+docker run -d -p 8080:80 --name docus-portfolio-cicd docus-portfolio-cicd:local
 ```
+
+#### Using Docker Compose
+
+```bash
+docker-compose up -d
+```
+
+The site will be available at `http://localhost:8080`.
 
 #### Using GitHub Container Registry Images
 
@@ -172,13 +180,13 @@ When a release is created, Docker images are automatically built and pushed to G
 
 ```bash
 # Pull the latest image
-docker pull ghcr.io/ttariik/devsecops-blog:latest
+docker pull ghcr.io/ttariik/docus-portfolio-cicd:latest
 
 # Run the container
-docker run -d -p 8080:80 --name devsecops-blog ghcr.io/ttariik/devsecops-blog:latest
+docker run -d -p 8080:80 --name docus-portfolio-cicd ghcr.io/ttariik/docus-portfolio-cicd:latest
 ```
 
-Images are available at: `ghcr.io/ttariik/devsecops-blog:latest` or tagged with the release version.
+Images are available at: `ghcr.io/ttariik/docus-portfolio-cicd:latest` or tagged with the release version.
 
 ## 🛠️ Technologies
 

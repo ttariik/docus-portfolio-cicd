@@ -58,8 +58,8 @@ jobs:
             fi
           fi
           echo "tag=$TAG" >> $GITHUB_OUTPUT
-          echo "image=ghcr.io/${{ github.repository_owner }}/devsecops-blog:$TAG" >> $GITHUB_OUTPUT
-          echo "image_latest=ghcr.io/${{ github.repository_owner }}/devsecops-blog:latest" >> $GITHUB_OUTPUT
+          echo "image=ghcr.io/${{ github.repository_owner }}/docus-portfolio-cicd:$TAG" >> $GITHUB_OUTPUT
+          echo "image_latest=ghcr.io/${{ github.repository_owner }}/docus-portfolio-cicd:latest" >> $GITHUB_OUTPUT
       
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
@@ -70,7 +70,7 @@ jobs:
             ${{ steps.meta.outputs.image }}
             ${{ steps.meta.outputs.image_latest }}
           build-args: |
-            BLOG_ENABLED=true
+            BLOG_ENABLED=false
             DEPLOYMENT_URL=https://ttariik.github.io
             BASE_URL=/
             GITHUB_ORG=${{ github.repository_owner }}
