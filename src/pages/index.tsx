@@ -1,52 +1,25 @@
 import type { ReactNode } from 'react';
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import Heading from '@theme/Heading';
-
-import styles from './index.module.css';
-
-function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <p className={styles.heroDescription}>
-          Welcome to my developer blog. Here you'll find comprehensive documentation, project
-          showcases, and insights into my development journey. Explore cutting-edge technologies,
-          best practices, and real-world implementations.
-        </p>
-        <div className={styles.buttons}>
-          <Link className="button button--primary button--lg" to="/docs/projects/overview">
-            <span>View Projects</span>
-            <span style={{ marginLeft: '0.5rem' }}>→</span>
-          </Link>
-          <Link className="button button--secondary button--lg" to="/docs/knowledge-base/intro">
-            <span>Knowledge Base</span>
-            <span style={{ marginLeft: '0.5rem' }}>📚</span>
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
+import AboutSection from '@site/src/components/AboutSection';
+import SkillsSection from '@site/src/components/SkillsSection';
+import ProjectsSection from '@site/src/components/ProjectsSection';
+import ContactSection from '@site/src/components/ContactSection';
+import ScrollToTop from '@site/src/components/ScrollToTop';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`${siteConfig.title} - ${siteConfig.tagline}`}
-      description="Developer blog showcasing projects, documentation, and technical insights by Tarik Sabanovic"
+      title={`${siteConfig.title} - Portfolio`}
+      description="Portfolio of Tarik Sabanovic, DevSecOps Engineer"
     >
-      <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        <AboutSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <ContactSection />
+        <ScrollToTop />
       </main>
     </Layout>
   );

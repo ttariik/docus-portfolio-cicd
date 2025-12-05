@@ -10,7 +10,7 @@ const blogEnabled = Boolean(process.env.BLOG_ENABLED === 'true');
 
 const config: Config = {
   title: 'Tarik Sabanovic',
-  tagline: 'Developer Blog & Projects',
+  tagline: 'DevSecOps Engineer',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -74,71 +74,40 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
     navbar: {
-      title: 'Tarik Sabanovic',
-      logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
-      },
+      hideOnScroll: false,
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Documentation',
-        },
-        {
-          to: '/docs/projects/overview',
-          label: 'Projects',
+          to: '#about',
+          label: 'About me',
           position: 'left',
         },
         {
-          href: 'https://github.com/ttariik',
-          label: 'GitHub',
-          position: 'right',
+          to: '#skills',
+          label: 'My skills',
+          position: 'left',
+        },
+        {
+          to: '#projects',
+          label: 'My projects',
+          position: 'left',
+        },
+        {
+          to: '#contact',
+          label: 'Contact',
+          position: 'left',
         },
       ],
     },
     footer: {
-      style: 'light',
-      links: [
-        {
-          title: 'Documentation',
-          items: [
-            {
-              label: 'Knowledge Base',
-              to: '/docs/knowledge-base/intro',
-            },
-          ],
-        },
-        {
-          title: 'Projects',
-          items: [
-            {
-              label: 'Projects Overview',
-              to: '/docs/projects/overview',
-            },
-          ],
-        },
-        {
-          title: 'Resources',
-          items: [
-            ...(blogEnabled
-              ? [
-                  {
-                    label: 'Blog',
-                    to: '/blog',
-                  },
-                ]
-              : []),
-            {
-              label: 'GitHub',
-              href: 'https://github.com/ttariik',
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} Tarik Sabanovic. Built with Docusaurus.`,
+      style: 'dark',
+      links: [],
+      copyright: `© Tarik Sabanovic ${new Date().getFullYear()}`,
     },
     prism: {
       theme: prismThemes.github,
