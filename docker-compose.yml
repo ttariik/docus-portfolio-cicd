@@ -1,19 +1,19 @@
 version: '3.8'
 
 services:
-  devsecops-blog:
+  docus-portfolio-cicd:
     build:
       context: .
       dockerfile: Dockerfile
       args:
-        BLOG_ENABLED: "true"
+        BLOG_ENABLED: "false"
         DEPLOYMENT_URL: "http://localhost:8080"
         BASE_URL: "/"
         GITHUB_ORG: "ttariik"
-        GITHUB_PROJECT: "DevSecOps-Blog"
+        GITHUB_PROJECT: "docus-portfolio-cicd"
         DEPLOYMENT_BRANCH: "main"
-    image: devsecops-blog:local
-    container_name: devsecops-blog
+    image: docus-portfolio-cicd:local
+    container_name: docus-portfolio-cicd
     ports:
       - "8080:80"
     restart: unless-stopped

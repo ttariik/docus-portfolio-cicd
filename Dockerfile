@@ -16,10 +16,10 @@ COPY . .
 
 # Build arguments for Docusaurus configuration
 ARG BLOG_ENABLED=false
-ARG DEPLOYMENT_URL="https://ttariik.github.io"
+ARG DEPLOYMENT_URL="http://localhost"
 ARG BASE_URL="/"
 ARG GITHUB_ORG="ttariik"
-ARG GITHUB_PROJECT="DevSecOps-Blog"
+ARG GITHUB_PROJECT="docus-portfolio-cicd"
 ARG DEPLOYMENT_BRANCH="main"
 
 # Set environment variables for build
@@ -42,8 +42,8 @@ FROM nginx:alpine AS runner
 # Copy built site from builder
 COPY --from=builder /app/build /usr/share/nginx/html
 
-# Copy custom nginx configuration if needed
-# COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Copy custom nginx configuration
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose port 80
 EXPOSE 80
