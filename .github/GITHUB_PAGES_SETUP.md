@@ -34,6 +34,7 @@ These are already configured in `.github/workflows/deploy.yml`.
 The workflow triggers automatically on:
 
 - Push to `main` branch
+- Push to `feature/development` branch
 - Manual trigger via `workflow_dispatch`
 
 To manually trigger:
