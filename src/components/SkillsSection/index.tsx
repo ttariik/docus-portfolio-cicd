@@ -66,9 +66,11 @@ const skills: Skill[] = [
 ];
 
 export default function SkillsSection(): ReactNode {
+  const baseUrl = useBaseUrl('/');
+  
   const skillsWithUrls = skills.map((skill) => ({
     ...skill,
-    iconUrl: useBaseUrl(skill.iconPath),
+    iconUrl: baseUrl + skill.iconPath.replace(/^\//, ''),
   }));
 
   return (
