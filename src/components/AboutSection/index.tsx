@@ -14,16 +14,20 @@ export default function AboutSection(): ReactNode {
             <p className={styles.role}>DevSecOps Engineer</p>
             <div className={styles.descriptionWrapper}>
               <p className={styles.descriptionText}>
-                I am passionate about building secure, scalable infrastructure and automating DevOps workflows. 
-                My focus is on creating robust solutions that bridge development, security, and operations.
+                I am passionate about building secure, scalable infrastructure and automating DevOps
+                workflows. My focus is on creating robust solutions that bridge development,
+                security, and operations.
               </p>
               <p className={styles.descriptionText}>
-                I continuously learn new technologies and stay current with industry best practices. 
-                Whether it's containerization, CI/CD pipelines, or security hardening, I approach each 
-                challenge with attention to detail and a commitment to excellence.
+                I continuously learn new technologies and stay current with industry best practices.
+                Whether it's containerization, CI/CD pipelines, or security hardening, I approach
+                each challenge with attention to detail and a commitment to excellence.
               </p>
             </div>
-            <Link className={clsx('button button--primary button--lg', styles.contactButton)} to="#contact">
+            <Link
+              className={clsx('button button--primary button--lg', styles.contactButton)}
+              to="#contact"
+            >
               Contact me
             </Link>
           </div>
@@ -35,4 +39,3 @@ export default function AboutSection(): ReactNode {
     </section>
   );
 }
-

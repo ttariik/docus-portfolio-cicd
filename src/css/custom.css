@@ -144,7 +144,7 @@ h6 {
 
 /* Navbar Enhancements */
 .navbar {
-  background: #266AD9;
+  background: #266ad9;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -276,7 +276,7 @@ h6 {
 }
 
 .navbar-sidebar__link {
-  color: #266AD9;
+  color: #266ad9;
   font-size: 1.125rem;
   font-weight: 500;
   display: block;
@@ -287,7 +287,7 @@ h6 {
 
 .navbar-sidebar__link:hover {
   background: rgba(38, 106, 217, 0.1);
-  color: #266AD9;
+  color: #266ad9;
 }
 
 .navbar-sidebar__backdrop {

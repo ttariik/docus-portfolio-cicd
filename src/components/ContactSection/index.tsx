@@ -8,11 +8,19 @@ export default function ContactSection(): ReactNode {
         <h2 className={styles.title}>Contact me.</h2>
         <div className={styles.contactContent}>
           <div className={styles.contactInfo}>
-
             <ul className={styles.infoList}>
-              <li>Feel free to reach out with job offers or opportunities in DevSecOps, Cloud Infrastructure, or Automation Engineering.</li>
-              <li>I am looking for roles that focus on infrastructure automation, security integration, and CI/CD pipeline development.</li>
-              <li>I will contribute by implementing secure DevOps practices, automating workflows, and improving system reliability.</li>
+              <li>
+                Feel free to reach out with job offers or opportunities in DevSecOps, Cloud
+                Infrastructure, or Automation Engineering.
+              </li>
+              <li>
+                I am looking for roles that focus on infrastructure automation, security
+                integration, and CI/CD pipeline development.
+              </li>
+              <li>
+                I will contribute by implementing secure DevOps practices, automating workflows, and
+                improving system reliability.
+              </li>
               <li>I am open for remote work and willing to relocate for the right opportunity.</li>
             </ul>
           </div>
@@ -30,7 +38,10 @@ export default function ContactSection(): ReactNode {
               <div className={styles.iconCircle}>
                 <span className={styles.icon}>in</span>
               </div>
-              <a href="https://de.linkedin.com/in/tarik-sabanovic-70410134b" className={styles.profileLink}>
+              <a
+                href="https://de.linkedin.com/in/tarik-sabanovic-70410134b"
+                className={styles.profileLink}
+              >
                 LinkedIn
               </a>
             </div>
@@ -40,4 +51,3 @@ export default function ContactSection(): ReactNode {
     </section>
   );
 }
-
