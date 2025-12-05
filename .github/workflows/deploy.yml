@@ -30,7 +30,12 @@ jobs:
         run: pnpm install --frozen-lockfile
       
       - name: Create .env config file
-        run: cp example.env .env
+        run: |
+          echo "DEPLOYMENT_URL=https://ttariik.github.io" > .env
+          echo "DEPLOYMENT_BRANCH=main" >> .env
+          echo "BASE_URL=/docus-portfolio-cicd/" >> .env
+          echo "GITHUB_ORG=ttariik" >> .env
+          echo "GITHUB_PROJECT=docus-portfolio-cicd" >> .env
       
       - name: Build website
         run: pnpm build && cp -r build github-pages
