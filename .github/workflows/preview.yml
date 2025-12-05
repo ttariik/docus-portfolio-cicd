@@ -2,7 +2,7 @@ name: Preview Build
 
 on:
   pull_request:
-    branches: [main, feature/**]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -51,14 +51,14 @@ jobs:
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: '✅ **Build erfolgreich!**\n\nDer Preview-Build wurde erfolgreich erstellt.'
+                body: '✅ **Build successful!**\n\nThe preview build was created successfully.'
               });
             } else {
               github.rest.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: '❌ **Build fehlgeschlagen!**\n\nBitte überprüfe die Build-Logs.'
+                body: '❌ **Build failed!**\n\nPlease check the build logs.'
               });
             }
       
