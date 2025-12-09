@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { useMemo, type ReactNode } from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
@@ -68,10 +68,14 @@ const skills: Skill[] = [
 export default function SkillsSection(): ReactNode {
   const baseUrl = useBaseUrl('/');
 
-  const skillsWithUrls = skills.map((skill) => ({
-    ...skill,
-    iconUrl: baseUrl + skill.iconPath.replace(/^\//, ''),
-  }));
+  const skillsWithUrls = useMemo(
+    () =>
+      skills.map((skill) => ({
+        ...skill,
+        iconUrl: baseUrl + skill.iconPath.replace(/^\//, ''),
+      })),
+    [baseUrl]
+  );
 
   return (
     <section id="skills" className={styles.skillsSection}>
