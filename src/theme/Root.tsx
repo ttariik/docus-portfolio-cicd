@@ -6,17 +6,28 @@ export default function Root({ children }: { children: ReactNode }): ReactNode {
   const location = useLocation();
 
   useEffect(() => {
-    const navbar = document.querySelector('.navbar');
-    if (!navbar) return;
+    // Function to hide/show navbar based on path
+    const updateNavbarVisibility = () => {
+      const navbar = document.querySelector('.navbar');
+      if (!navbar) return;
 
-    // Hide navbar on all documentation pages (/docs/)
-    const isDocPage = location.pathname.includes('/docs/');
+      // Hide navbar on all documentation pages (/docs/)
+      const isDocPage = location.pathname.includes('/docs/');
 
-    if (isDocPage) {
-      navbar.classList.add('navbar-hidden-on-docs');
-    } else {
-      navbar.classList.remove('navbar-hidden-on-docs');
-    }
+      if (isDocPage) {
+        navbar.classList.add('navbar-hidden-on-docs');
+      } else {
+        navbar.classList.remove('navbar-hidden-on-docs');
+      }
+    };
+
+    // Update immediately
+    updateNavbarVisibility();
+
+    // Also update after a short delay to catch late-rendered navbars
+    const timeoutId = setTimeout(updateNavbarVisibility, 100);
+
+    return () => clearTimeout(timeoutId);
 
     // Add Legal Notice link to footer copyright
     const copyright = document.querySelector('.footer__copyright');
