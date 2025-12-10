@@ -106,7 +106,17 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      links: [],
+      links: [
+        {
+          title: 'Legal',
+          items: [
+            {
+              label: 'Legal Notice',
+              to: '/legal-notice',
+            },
+          ],
+        },
+      ],
       copyright: `© Tarik Sabanovic ${new Date().getFullYear()}`,
     },
     prism: {
