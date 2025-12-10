@@ -656,10 +656,17 @@ h6 {
   gap: 0.5rem;
 }
 
+.footer__copyright::after {
+  content: '';
+  display: block;
+}
+
 .footer__copyright a {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   transition: color 0.3s ease;
+  display: block;
+  margin-top: 0.5rem;
 }
 
 .footer__copyright a:hover {
