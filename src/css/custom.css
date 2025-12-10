@@ -154,8 +154,8 @@ h6 {
   z-index: 1000;
 }
 
-/* Hide navbar on project documentation pages */
-.navbar-hidden-on-projects {
+/* Hide navbar on all documentation pages */
+.navbar-hidden-on-docs {
   display: none !important;
 }
 

@@ -9,12 +9,13 @@ export default function Root({ children }: { children: ReactNode }): ReactNode {
     const navbar = document.querySelector('.navbar');
     if (!navbar) return;
 
-    const isProjectDocPage = location.pathname.includes('/docs/projects/');
+    // Hide navbar on all documentation pages (/docs/)
+    const isDocPage = location.pathname.includes('/docs/');
 
-    if (isProjectDocPage) {
-      navbar.classList.add('navbar-hidden-on-projects');
+    if (isDocPage) {
+      navbar.classList.add('navbar-hidden-on-docs');
     } else {
-      navbar.classList.remove('navbar-hidden-on-projects');
+      navbar.classList.remove('navbar-hidden-on-docs');
     }
 
     // Add Legal Notice link to footer copyright

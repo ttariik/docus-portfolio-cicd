@@ -107,7 +107,7 @@ const config: Config = {
     footer: {
       style: 'dark',
       links: [],
-      copyright: `© Tarik Sabanovic ${new Date().getFullYear()} | <a href="/legal-notice">Legal Notice</a>`,
+      copyright: `© Tarik Sabanovic ${new Date().getFullYear()}`,
     },
     prism: {
       theme: prismThemes.github,
