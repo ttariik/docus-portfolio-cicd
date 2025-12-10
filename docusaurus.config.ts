@@ -106,18 +106,8 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: 'Legal',
-          items: [
-            {
-              label: 'Legal Notice',
-              to: '/legal-notice',
-            },
-          ],
-        },
-      ],
-      copyright: `© Tarik Sabanovic ${new Date().getFullYear()}`,
+      links: [],
+      copyright: `© Tarik Sabanovic ${new Date().getFullYear()} | <a href="/legal-notice">Legal Notice</a>`,
     },
     prism: {
       theme: prismThemes.github,
