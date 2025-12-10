@@ -8,13 +8,15 @@ export default function Root({ children }: { children: ReactNode }): ReactNode {
   const { siteConfig } = useDocusaurusContext();
 
   useEffect(() => {
+    const baseUrl = siteConfig.baseUrl || '/';
+    const legalNoticePath = `${baseUrl}legal-notice`.replace(/\/+/g, '/'); // Normalize path
+
     // Function to hide/show navbar based on path
     const updateNavbarVisibility = () => {
       const navbar = document.querySelector('.navbar');
       if (!navbar) return;
 
       // Hide navbar on all documentation pages (/docs/) and legal notice page
-      const baseUrl = siteConfig.baseUrl || '/';
       const isDocPage = location.pathname.includes('/docs/');
       const isLegalNoticePage = location.pathname.includes('/legal-notice');
 
@@ -28,8 +30,6 @@ export default function Root({ children }: { children: ReactNode }): ReactNode {
     // Function to add Legal Notice link to footer
     const addLegalNoticeLink = () => {
       const copyright = document.querySelector('.footer__copyright');
-      const baseUrl = siteConfig.baseUrl || '/';
-      const legalNoticePath = `${baseUrl}legal-notice`.replace(/\/+/g, '/'); // Normalize path
 
       if (copyright && !copyright.querySelector(`a[href="${legalNoticePath}"]`)) {
         const link = document.createElement('a');
@@ -65,7 +65,7 @@ export default function Root({ children }: { children: ReactNode }): ReactNode {
     }, 100);
 
     return () => clearTimeout(timeoutId);
-  }, [location.pathname]);
+  }, [location.pathname, siteConfig.baseUrl]);
 
   return <>{children}</>;
 }
