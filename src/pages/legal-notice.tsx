@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import Layout from '@theme/Layout';
+import Link from '@docusaurus/Link';
 
 export default function LegalNotice(): ReactNode {
   return (
@@ -7,6 +8,11 @@ export default function LegalNotice(): ReactNode {
       <div className="container margin-vert--lg">
         <div className="row">
           <div className="col col--8 col--offset-2">
+            <div style={{ marginBottom: '2rem' }}>
+              <Link className="button button--primary button--lg" to="/">
+                ← Back to Home
+              </Link>
+            </div>
             <h1>Legal Notice</h1>
 
             <h2>Information according to § 5 TMG</h2>
