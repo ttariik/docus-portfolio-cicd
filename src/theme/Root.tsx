@@ -11,10 +11,11 @@ export default function Root({ children }: { children: ReactNode }): ReactNode {
       const navbar = document.querySelector('.navbar');
       if (!navbar) return;
 
-      // Hide navbar on all documentation pages (/docs/)
+      // Hide navbar on all documentation pages (/docs/) and legal notice page
       const isDocPage = location.pathname.includes('/docs/');
+      const isLegalNoticePage = location.pathname.includes('/legal-notice');
 
-      if (isDocPage) {
+      if (isDocPage || isLegalNoticePage) {
         navbar.classList.add('navbar-hidden-on-docs');
       } else {
         navbar.classList.remove('navbar-hidden-on-docs');
