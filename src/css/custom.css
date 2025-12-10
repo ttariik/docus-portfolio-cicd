@@ -159,6 +159,11 @@ h6 {
   display: none !important;
 }
 
+/* Fallback: Hide navbar on documentation pages using CSS attribute selector */
+html[data-path*='/docs/'] .navbar {
+  display: none !important;
+}
+
 .navbar__inner {
   max-width: 1200px;
   margin: 0 auto;
