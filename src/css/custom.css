@@ -656,17 +656,15 @@ h6 {
   gap: 0.5rem;
 }
 
-.footer__copyright::after {
-  content: 'Legal notice';
-  display: block;
+.footer__copyright a {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
-  cursor: pointer;
   transition: color 0.3s ease;
 }
 
-.footer__copyright:hover::after {
+.footer__copyright a:hover {
   color: white;
+  text-decoration: underline;
 }
 
 [data-theme='dark'] .footer__copyright {
