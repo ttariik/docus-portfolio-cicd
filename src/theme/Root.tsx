@@ -1,9 +1,11 @@
 import { useEffect } from 'react';
 import { useLocation } from '@docusaurus/router';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import type { ReactNode } from 'react';
 
 export default function Root({ children }: { children: ReactNode }): ReactNode {
   const location = useLocation();
+  const { siteConfig } = useDocusaurusContext();
 
   useEffect(() => {
     // Function to hide/show navbar based on path
@@ -12,6 +14,7 @@ export default function Root({ children }: { children: ReactNode }): ReactNode {
       if (!navbar) return;
 
       // Hide navbar on all documentation pages (/docs/) and legal notice page
+      const baseUrl = siteConfig.baseUrl || '/';
       const isDocPage = location.pathname.includes('/docs/');
       const isLegalNoticePage = location.pathname.includes('/legal-notice');
 
@@ -25,9 +28,12 @@ export default function Root({ children }: { children: ReactNode }): ReactNode {
     // Function to add Legal Notice link to footer
     const addLegalNoticeLink = () => {
       const copyright = document.querySelector('.footer__copyright');
-      if (copyright && !copyright.querySelector('a[href="/legal-notice"]')) {
+      const baseUrl = siteConfig.baseUrl || '/';
+      const legalNoticePath = `${baseUrl}legal-notice`.replace(/\/+/g, '/'); // Normalize path
+
+      if (copyright && !copyright.querySelector(`a[href="${legalNoticePath}"]`)) {
         const link = document.createElement('a');
-        link.href = '/legal-notice';
+        link.href = legalNoticePath;
         link.textContent = 'Legal Notice';
         link.style.color = 'rgba(255, 255, 255, 0.8)';
         link.style.textDecoration = 'none';
